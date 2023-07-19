@@ -3,8 +3,15 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color:rgba(234, 255, 45, 0.781);
+}
+
 .title{
     text-align: center;
+    text-shadow: 3px 2px rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.89);
+    text-decoration: underline;
 }
 
 
@@ -16,6 +23,9 @@
     border: 1px solid red;
     margin: auto;
     margin-top: 3rem;
+    background-color: rgba(2, 2, 2, 0.527);
+    border-radius: 1rem;
+    box-shadow: 10px 10px 3px;
 }
 
 
@@ -26,7 +36,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding: 0.5rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.925);
 }
 
 
@@ -55,5 +67,20 @@
 }
 
 .btn{
-
+    border: none;
+    height: 4.5rem;
+    width: 4.5rem;
+    background-color: black;
+    color: rgb(255, 251, 0);
+    font-size: 2rem;
+    border-radius: 4rem;
+    box-shadow: 1px 2px rgba(43, 36, 36, 0.61);
 }
+
+.btn:hover{
+    background-color: rgba(234, 255, 42, 0.781);
+    color: black;
+    margin-bottom: 9px;
+    box-shadow: 1px 2px rgba(153, 158, 136, 0.61);
+}
+
