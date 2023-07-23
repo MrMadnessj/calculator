@@ -9,31 +9,34 @@
 </head>
 <body>
     <header>
-        <h1 class="title">Calculator</h1>
+        <h1 class="title">Ugly Calculator</h1>
     </header>
     <main>
         <div class="body">
-            <div class="screen"></div>
+            <div class="screen">
+                <div data-prev-operand class="prev-op"></div>
+                <div data-curr-operand class="curr-op"></div>
+            </div>
             <div class="buttons">
-                <div class="button" id="allclear"><button class="btn" value="ac">ac</button></div>
-                <div class="button" id="clear"><button class="btn" value="c">c</button></div>
-                <div class="button" id="modulus"><button class="btn" value="%">%</button></div>
-                <div class="button" id="divide"><button class="btn" value="÷">/</button></div>
-                <div class="button" id="one"><button class="btn" value="1">1</button></div>
-                <div class="button" id="two"><button class="btn" value="2">2</button></div>
-                <div class="button" id="three"><button class="btn" value="3">3</button></div>
-                <div class="button" id="plus"><button class="btn" value="+">+</button></div>
-                <div class="button" id="four"><button class="btn" value="4">4</button></div>
-                <div class="button" id="five"><button class="btn" value="5">5</button></div>
-                <div class="button" id="six"><button class="btn" value="6">6</button></div>
-                <div class="button" id="minus"><button class="btn" value="-">-</button></div>
-                <div class="button" id="seven"><button class="btn" value="7">7</button></div>
-                <div class="button" id="eight"><button class="btn" value="8">8</button></div>
-                <div class="button" id="nine"><button class="btn" value="9">9</button></div>
-                <div class="button" id="multiply"><button class="btn" value="x">x</button></div>
-                <div class="button" id="zero"><button class="btn" value="0">0</button></div>
-                <div class="button" id="period"><button class="btn" value=".">.</button></div>
-                <div class="button" id="equal"><button class="btn" value="=" id="equal">=</button></div>
+                <div class="button" id="allclear"><button   data-all-clear  class="btn" value="ac">ac</button></div>
+                <div class="button" id="clear"><button      data-clear      class="btn" value="c">c</button></div>
+                <div class="button" id="modulus"><button    data-operation  class="btn" value="%">%</button></div>
+                <div class="button" id="divide"><button     data-operation  class="btn" value="÷">/</button></div>
+                <div class="button" id="one"><button        data-number     class="btn" value="1">1</button></div>
+                <div class="button" id="two"><button        data-number     class="btn" value="2">2</button></div>
+                <div class="button" id="three"><button      data-number     class="btn" value="3">3</button></div>
+                <div class="button" id="plus"><button       data-operation  class="btn" value="+">+</button></div>
+                <div class="button" id="four"><button       data-number     class="btn" value="4">4</button></div>
+                <div class="button" id="five"><button       data-number     class="btn" value="5">5</button></div>
+                <div class="button" id="six"><button        data-number     class="btn" value="6">6</button></div>
+                <div class="button" id="minus"><button      data-operation  class="btn" value="-">-</button></div>
+                <div class="button" id="seven"><button      data-number     class="btn" value="7">7</button></div>
+                <div class="button" id="eight"><button      data-number     class="btn" value="8">8</button></div>
+                <div class="button" id="nine"><button       data-number     class="btn" value="9">9</button></div>
+                <div class="button" id="multiply"><button   data-operation  class="btn" value="x">x</button></div>
+                <div class="button" id="zero"><button       data-number     class="btn" value="0">0</button></div>
+                <div class="button" id="period"><button     data-number     class="btn" value=".">.</button></div>
+                <div class="button" id="equal1"><button     data-equals     class="btn" value="=" id="equal">=</button></div>
             </div>
         </div>
     </main>

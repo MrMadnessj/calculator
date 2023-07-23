@@ -4,13 +4,13 @@
 }
 
 body{
-    background-color:rgba(234, 255, 45, 0.781);
+    background-color: rgba(55, 12, 87, 0.9);
 }
 
 .title{
     text-align: center;
-    text-shadow: 3px 2px rgb(255, 255, 255);
-    color: rgba(0, 0, 0, 0.89);
+    text-shadow: 3px 2px rgb(0, 0, 0);
+    color: rgb(0, 140, 255);
     text-decoration: underline;
 }
 
@@ -20,26 +20,15 @@ body{
     flex-direction: column;
     max-width: 26rem;
     height: 37rem;
-    border: 1px solid red;
+
     margin: auto;
     margin-top: 3rem;
-    background-color: rgba(2, 2, 2, 0.527);
-    border-radius: 1rem;
-    box-shadow: 10px 10px 3px;
+    background-color: rgba(154, 61, 221, 0.836);
+
+    box-shadow: inset 9px 5px 200px;
 }
 
 
-.screen{
-    border: 1px solid green;
-    height: 8rem;
-    margin: 0.8rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding: 0.8rem;
-    border-radius: 1rem;
-    background-color: rgba(0, 0, 0, 0.925);
-}
 
 
 .buttons{
@@ -53,13 +42,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid blue;
+
     width: 6rem;
     height: 5.3rem;
 }
 
-#equal{
+#equal1{
     flex: 0.86;
+}
+
+#equal{
+    flex: 1;
 }
 
 #0{
@@ -68,19 +61,53 @@ body{
 
 .btn{
     border: none;
-    height: 4.5rem;
-    width: 4.5rem;
-    background-color: black;
-    color: rgb(255, 251, 0);
+    height: 5rem;
+    width: 5.9rem;
+    background-color: rgba(73, 40,97, 0.38);
+    color: rgb(65, 190, 248);
     font-size: 2rem;
-    border-radius: 4rem;
-    box-shadow: 1px 2px rgba(43, 36, 36, 0.61);
+    border-radius: 0rem;
+    box-shadow: 1px 2px rgba(83, 79, 79, 0.61);
+
 }
 
 .btn:hover{
-    background-color: rgba(234, 255, 42, 0.781);
-    color: black;
+    background-color: rgb(69, 233, 255);
+    color: rgb(0, 0, 0);
     margin-bottom: 9px;
-    box-shadow: 1px 2px rgba(153, 158, 136, 0.61);
+
+    cursor: pointer;
 }
+
+.screen{
+    color: rgba(247, 243, 14, 0.658);
+    height: 8rem;
+    margin: 0.8rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    
+    padding: 0.8rem;
+    border-radius: 1rem;
+    background-color:rgba(0, 0, 0, 0.925);
+    box-shadow: inset 4px 3px 2px 0.2px rgb(46, 44, 44);
+
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+
+.screen .prev-op{
+    font-size: 1.5rem;
+    color: rgba(255, 217, 0, 0.89);
+}
+
+.screen .curr-op{
+    font-size: 2.5rem;
+    color: rgb(229, 255, 0);
+}
+
+
 

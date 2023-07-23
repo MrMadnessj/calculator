@@ -1,29 +1,103 @@
-const button = document.querySelectorAll('.btn');
-let screenDiv = document.querySelector('.screen'); 
+class Calculator{
+    constructor(prevOperandText, currOperandText){
+        this.prevOperandText = prevOperandText;
+        this.currOperandText = currOperandText;
+        this.allclear();
+    }
 
-button.forEach(btn => {
-    btn.addEventListener('click', () => {
-        let screenEleDiv = document.createElement('div');
-        let screenEle = document.createElement('p');
-        screenEle.style.cssText = "color: yellow; font-size: 1.5rem";
+    allclear(){
+        this.currOperand = '';
+        this.prevOperand = '';
+        this.operator = undefined;
+    }
 
-        screenEle.innerText = btn.value;
-        screenEleDiv.appendChild(screenEle);
+    clear(){
 
-        screenDiv.appendChild(screenEleDiv);
-        console.log(btn.value);
+    }
+
+    appendNumber(number){
+        if(number === '.' && this.currOperand.includes('.')) return;
+        this.currOperand = this.currOperand.toString() + number.toString();
+    }
+
+    chooseOperator(operator){
+        if(this.currOperand == '') return;     
+        if(this.prevOperand !== ''){
+            this.compute();
+        }
+        this.operation = operator;
+        this.prevOperand = this.currOperand;
+        this.currOperand = '';
+    }
+
+    compute(){
+        let computation;
+        let prev = parseFloat(this.prevOperand);
+        let curr = parseFloat(this.currOperand);
+        if(isNaN(prev) || isNaN(curr)) return;
+        switch(this.operation){
+            case '+':
+                computation = prev + curr;
+                break;
+            case '-':
+                computation = prev - curr;
+                break;
+            case '÷':
+                computation = prev / curr;
+                break;
+            case '%':
+                computation = prev % curr;
+                break;
+            case 'x':
+                computation = prev * curr;
+                break;
+            default:
+                return;
+        }
+
+        this.currOperand = computation;
+        this.operation = undefined;
+        this.prevOperand = '';
+
+    }
+
+    updateDisplay(){
+        this.currOperandText.innerText = this.currOperand;
+        this.prevOperandText.innerText = this.prevOperand;
+    }
+}
+
+
+
+
+
+const numberButton = document.querySelectorAll('[data-number]');
+const operationButton = document.querySelectorAll('[data-operation]');
+const equalsButton = document.querySelector('[data-equals]');
+const clearButton = document.querySelector('[data-clear]');
+const allClearButton = document.querySelector('[data-all-clear]');
+
+const prevOperandText = document.querySelector('[data-prev-operand]');
+const currOperandText = document.querySelector('[data-curr-operand]');
+
+
+const calculator = new Calculator(prevOperandText, currOperandText);
+
+numberButton.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.appendNumber(button.innerHTML);
+        calculator.updateDisplay();
     })
 })
 
+operationButton.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperator(button.innerHTML);
+        calculator.updateDisplay();
+    })
+})
 
-function input(btn)
-{
-    if(btn == '+' || btn == '-' || btn == '%' || btn == '÷' || btn == 'x')
-        operate()
-}
-
-
-function operate(btn)
-{
-    
-}
+equalsButton.addEventListener('click', button => {
+    calculator.compute();
+    calculator.updateDisplay();  
+})
