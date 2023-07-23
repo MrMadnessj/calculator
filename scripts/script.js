@@ -12,7 +12,7 @@ class Calculator{
     }
 
     clear(){
-
+        this.currOperand = this.currOperand.toString().slice(0,-1);
     }
 
     appendNumber(number){
@@ -61,9 +61,31 @@ class Calculator{
 
     }
 
+    fancyNumber(number){
+        let stringNumber = number.toString();
+        let integerDigits = parseFloat(stringNumber.split('.')[0]);
+        let decimalDigits = stringNumber.split('.')[1];
+
+        let finalNumber;
+        if(isNaN(integerDigits))
+            finalNumber = '';
+        else
+            finalNumber = integerDigits.toLocaleString( 'en', {maximumFractionDigits : 0});
+        
+        if(decimalDigits)  
+            return `${finalNumber}.${decimalDigits}`;
+        else
+            return finalNumber;
+    }
+
     updateDisplay(){
-        this.currOperandText.innerText = this.currOperand;
-        this.prevOperandText.innerText = this.prevOperand;
+        this.currOperandText.innerText = this.fancyNumber(this.currOperand);
+        if(this.operation != null){
+            this.prevOperandText.innerText = 
+            `${this.fancyNumber(this.prevOperand)} ${this.operation}`;
+        }
+        else
+            this.prevOperandText.innerText = '';
     }
 }
 
@@ -100,4 +122,15 @@ operationButton.forEach(button => {
 equalsButton.addEventListener('click', button => {
     calculator.compute();
     calculator.updateDisplay();  
+})
+
+
+allClearButton.addEventListener('click', button => {
+    calculator.allclear();
+    calculator.updateDisplay();
+})
+
+clearButton.addEventListener('click', button => {
+    calculator.clear();
+    calculator.updateDisplay();
 })
