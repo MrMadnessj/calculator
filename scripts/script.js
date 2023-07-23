@@ -72,7 +72,7 @@ class Calculator{
         else
             finalNumber = integerDigits.toLocaleString( 'en', {maximumFractionDigits : 0});
         
-        if(decimalDigits)  
+        if(decimalDigits != null)  
             return `${finalNumber}.${decimalDigits}`;
         else
             return finalNumber;
